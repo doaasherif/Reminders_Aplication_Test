@@ -1,0 +1,36 @@
+.iD0-reminder{
+    background-image: url('../assets/Logo.svg');
+    padding: 20px;
+}
+
+.iD0-menu{
+    background-image: url('../assets/Mask\ Group\ 1.svg');
+}
+
+.iD0-prayer{
+    background-image: url('../assets/Mask\ Group\ 2.svg');
+}
+
+.iD0-dashboard{
+    background-image: url('../assets/Mask\ Group\ 4.svg');
+}
+
+.iD0-tasks{
+    background-image: url('../assets/Mask\ Group\ 5.svg');
+}
+
+.iD0-reminder-li{
+    background-image: url('../assets/Mask\ Group\ 6.svg');
+}
+
+.iD0-pocket{
+    background-image: url('../assets/Mask\ Group\ 7.svg');
+}
+
+.iD0-categories{
+    background-image: url('../assets/Mask\ Group\ 8.svg');
+}
+
+.iD0-archive{
+    background-image: url('../assets/Mask\ Group\ 9.svg');
+}
