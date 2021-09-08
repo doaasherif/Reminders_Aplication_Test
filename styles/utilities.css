@@ -21,3 +21,7 @@
 .uD0-gap-24{
     gap: 24px;
 }
+
+.uD0-click{
+    cursor: pointer;
+}

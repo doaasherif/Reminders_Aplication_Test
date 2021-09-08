@@ -2,6 +2,8 @@ const mainAside = document.getElementById('aside');
 
 const mainAsideObj = {
 
+    state: true,
+
     asideHeader: {
         appLogo: "iD0-reminder",
         appName: "Reminders"
@@ -23,19 +25,19 @@ function mainAsideTemp(){
                     <section>
 
                         
-                    <header class="D0-rem-header cD0-bg-white-gray w-100 cD0-gray fD0-size-29 fD0-arial d-flex uD0-gap-24 align-items-center">
-                        <i class="${mainAsideObj.asideHeader.appLogo} uD0-cover uD0-size-42-36 d-inline-block"></i>
-                        ${mainAsideObj.asideHeader.appName}
-                        <i class="iD0-menu uD0-cover uD0-size-32 d-inline-block uD0-m-l-auto"></i>
+                    <header class="D0-rem-header cD0-bg-white-gray w-100 cD0-gray fD0-size-29 fD0-arial uD0-click d-flex uD0-gap-24 align-items-center">
+                        <i class="${mainAsideObj.asideHeader.appLogo} ${mainAsideObj.state? "d-inline-block" : "d-none"} uD0-cover uD0-size-42-36"></i>
+                        ${mainAsideObj.state ? mainAsideObj.asideHeader.appName : ""}
+                        <i onclick="moveAside(event)" class="iD0-menu uD0-cover uD0-size-32 d-inline-block uD0-m-l-auto"></i>
                     </header>
 
 
-                    <ul class="ps-0">
+                    <ul class="ps-0 uD0-click">
                     `
         for(let [index, item] of mainAsideObj.asideItems.entries()){
             asideTemp+= `<li onclick="toggleActive(${index}); router(${index});" class="${item.active ? "cD0-bg-blue" : false} D0-aside-li d-flex cD0-white-gray fD0-size-29 fD0-arial uD0-gap-24 align-items-center">
                         <i class="${item.icon} uD0-cover uD0-size-32 d-inline-block"></i>
-                        ${item.title}
+                        ${mainAsideObj.state? item.title : ""}
                         </li>`
         }
 
@@ -78,6 +80,24 @@ function obtainRoute(){
 
 function componentRender(){
     mainAside.innerHTML = mainAsideTemp()
+}
+
+function moveAside(event) {
+    let open = mainAsideObj.state;
+    switch (open){
+        case true:
+            mainAsideObj.state = false;
+            mainAside.style.width= "80px";
+            componentRender()
+            break;
+        case false:
+            mainAsideObj.state = true;
+            mainAside.style.width= "462px";
+            setTimeout(() => {
+                componentRender()
+            },200)
+            break;
+    }
 }
 
 

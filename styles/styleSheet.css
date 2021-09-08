@@ -9,6 +9,8 @@ li{
 .D0-aside{
     height: 100vh;
     width: 462px;
+    /* left: 0px; */
+    transition: all ease-in-out 400ms;
 }
 
 .D0-nav{
